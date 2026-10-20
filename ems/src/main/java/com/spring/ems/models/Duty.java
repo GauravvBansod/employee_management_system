@@ -24,8 +24,8 @@ public class Duty {
     @ManyToAny
     @JoinColumn(name = "assignedByManager")
     private Manager assignedByManager;
-    @ManyToOne
-    @JoinColumn(name = "assigned_by_admin_id")
+    @ManyToAny
+    @JoinColumn(name = "assignedByAdmin")
     private Admin assignedByAdmin;
 
 }
