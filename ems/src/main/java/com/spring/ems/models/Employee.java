@@ -40,11 +40,12 @@ public class Employee {
     private String contact;
 
 
-    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @OneToMany(mappedBy = "emp", cascade = CascadeType.ALL)
     private List<Leaves> leavesList;
     @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
     private List<Duty> duties;
-    @ManyToAny
+    @ManyToOne
     @JoinColumn(name = "manager_id")
     private Manager manager;
 

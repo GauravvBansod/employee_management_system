@@ -2,7 +2,6 @@ package com.spring.ems.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "duty_table")
@@ -15,17 +14,18 @@ public class Duty {
     private int id;
     @Column(nullable = false)
     private String title;
-    @Column(nullable = false,length = 500)
+    @Column(nullable = false, length = 500)
     private String description;
 
-    @ManyToAny
+    @ManyToOne
     @JoinColumn(name = "emp_id")
     private Employee employee;
-    @ManyToAny
+
+    @ManyToOne
     @JoinColumn(name = "assignedByManager")
     private Manager assignedByManager;
-    @ManyToAny
+
+    @ManyToOne
     @JoinColumn(name = "assignedByAdmin")
     private Admin assignedByAdmin;
-
 }

@@ -27,7 +27,7 @@ public class Leaves {
     @Column(nullable = false)
     private String status;
 
-    @ManyToAny
+    @ManyToOne
     @JoinColumn(name = "emp_id")
     private Employee emp;
 
